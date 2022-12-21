@@ -1,5 +1,10 @@
-const app = new PIXI.Application();
-document.body.appendChild(app.view);
+const app = new PIXI.Application({
+    backgroundColor: 0x2b2b2b
+});
+let application = document.getElementById('application');
+
+
+application.appendChild(app.view);
 
 // holder to store the aliens
 const aliens = [];
@@ -20,7 +25,7 @@ for (let i = 0; i < totalDudes; i++) {
     dude.x = Math.random() * app.screen.width;
     dude.y = Math.random() * app.screen.height;
 
-    dude.tint = Math.random() * 0xFFFFFF;
+    dude.tint = Math.random() * 0xf5ff81;
 
     // create some extra properties that will control movement :
     // create a random direction in radians. This is a number between 0 and PI*2 which is the equivalent of 0 - 360 degrees
@@ -44,6 +49,7 @@ const dudeBounds = new PIXI.Rectangle(-dudeBoundsPadding,
     -dudeBoundsPadding,
     app.screen.width + dudeBoundsPadding * 2,
     app.screen.height + dudeBoundsPadding * 2);
+
 
 app.ticker.add(() => {
     // iterate through the dudes and update their position
