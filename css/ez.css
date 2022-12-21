@@ -139,7 +139,7 @@ canvas {
 }
 
 img {
-  max-width: 100%;
+  max-width: 100% !important;
 }
 
 /* Typography
@@ -433,6 +433,6 @@ there.
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {
  img{
-  width: 50%; 
+  max-width: 50%; 
   display: block;}
 }
